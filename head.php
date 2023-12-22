@@ -3,22 +3,19 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and validate input data
+    
     $firstName = htmlspecialchars($_POST['first_name']);
     $lastName = htmlspecialchars($_POST['last_name']);
     $birthDate = htmlspecialchars($_POST['birth_date']);
     $goals = htmlspecialchars($_POST['goals']);
 
-    // Process and validate image upload
-
-    // Set a cookie with the user data
-    $expiryDate = time() + (365 * 24 * 60 * 60); // 1 year expiration
+    $expiryDate = time() + (365 * 24 * 60 * 60); 
     setcookie('user_data', json_encode([
         'first_name' => $firstName,
         'last_name' => $lastName,
         'birth_date' => $birthDate,
-        'goals' => $goals, // Save the image path
-    ]), $expiryDate, '/'); // '/' means the cookie is available for the entire domain
+        'goals' => $goals,
+    ]), $expiryDate, '/');
 
     echo "Cookie set successfully!";
 }
@@ -29,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="GoalTracker, Goal, Tracker" />
+  <meta name="description" content="GoalTracker" />
+  <meta name="author" content="Aragon_Fernando, Apex" />
   <title>Goal-Pro</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
