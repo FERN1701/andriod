@@ -10,8 +10,6 @@
         
       </div>
     </header>
-    <!-- end header section -->
-    <!-- slider section -->
     <section class=" slider_section position-relative">
       <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -94,8 +92,6 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <!-- owl carousel script 
-    -->
   <script type="text/javascript">
     $(".owl-carousel").owlCarousel({
       loop: true,
@@ -114,7 +110,6 @@
       }
     });
   </script>
-  <!-- end owl carousel script -->
 
 </body>
 
