@@ -210,7 +210,6 @@
       }
     });
   </script>
-  <!-- end owl carousel script -->
 
 </body>
 
