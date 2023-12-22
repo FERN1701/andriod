@@ -10,11 +10,11 @@
         <?php include "nav.php"?>
       </div>
     </header>
-    <!-- end header section -->
+    
   </div>
 
 
-  <!-- who section -->
+  
 
   <section class="who_section layout_padding">
     <div class="container">
@@ -56,17 +56,14 @@
     </div>
   </section>
 
-  <!-- end who section -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Your JavaScript code goes here...
+ 
 
-    // Array to store goal values
+    
     var goalsArray = [];
-
-    // Load goals from local storage
     var storedGoals = localStorage.getItem('goals');
     if (storedGoals) {
         goalsArray = JSON.parse(storedGoals);
@@ -74,30 +71,19 @@
     }
 
     function collectGoal() {
-        // Get form inputs
         var goalTitle = document.getElementById("goalTitle").value;
         var startTimeInput = document.getElementById("startTime");
         var endTimeInput = document.getElementById("endTime");
-
-        // Retrieve values directly from datetime-local inputs
         var startTime = startTimeInput.value;
         var endTime = endTimeInput.value;
-
-        // Create a goal object
         var goal = {
             title: goalTitle,
             start: startTime,
             end: endTime,
             done: false
         };
-
-        // Add the goal object to the array
         goalsArray.push(goal);
-
-        // Save goals to local storage
         localStorage.setItem('goals', JSON.stringify(goalsArray));
-
-        // Display goals using a loop
         displayGoals();
     }
 
@@ -117,8 +103,6 @@
     function displayGoals() {
         var goalOutputDiv = document.getElementById("goalOutput");
         goalOutputDiv.innerHTML = "<h2></h2>";
-
-        // Loop through the goalsArray and display each goal
         goalOutputDiv.innerHTML += "<table class='table'>";
 for (var i = 0; i < goalsArray.length; i++) {
     var formattedStartTime = formatDateTime(goalsArray[i].start);
@@ -149,24 +133,14 @@ goalOutputDiv.innerHTML += "</table>";
     }
 
     function removeGoal(index) {
-        // Remove the goal at the specified index
         goalsArray.splice(index, 1);
-
-        // Save goals to local storage
         localStorage.setItem('goals', JSON.stringify(goalsArray));
-
-        // Display goals using a loop
         displayGoals();
     }
 
     function markAsDone(index) {
-        // Mark the goal as done
         goalsArray[index].done = true;
-
-        // Save goals to local storage
         localStorage.setItem('goals', JSON.stringify(goalsArray));
-
-        // Display goals using a loop
         displayGoals();
     }
 </script>
@@ -174,8 +148,6 @@ goalOutputDiv.innerHTML += "</table>";
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <!-- owl carousel script 
-    -->
   <script type="text/javascript">
     $(".owl-carousel").owlCarousel({
       loop: true,
@@ -194,7 +166,6 @@ goalOutputDiv.innerHTML += "</table>";
       }
     });
   </script>
-  <!-- end owl carousel script -->
 
 </body>
 
